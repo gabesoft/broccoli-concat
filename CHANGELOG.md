@@ -1,3 +1,7 @@
+0.0.23
+-----
+Use inputPaths instead of readTree
+
 0.0.21
 -----
 Removed the cleanup method
