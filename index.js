@@ -23,6 +23,7 @@ function Concat(inputTree, options) {
 
   this.cache = {}
   this.cachedConcatenatedOutputHash = null
+  Plugin.call(this, inputTree, options);
 }
 
 Concat.prototype.DEFAULT_SEPARATOR = '\n'
