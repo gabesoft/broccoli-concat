@@ -44,9 +44,9 @@ Concat.prototype.getCacheDir = function () {
 
 Concat.prototype.build = function () {
   var self = this
-  var readTree = this.inputPaths[0];
+  var srcDir = this.inputPaths[0];
   var destDir = this.outputPath;
-  return readTree(this.inputTree).then(function (srcDir) {
+
     var modulesAdded = {}
     var output = []
 
@@ -120,7 +120,6 @@ Concat.prototype.build = function () {
       newCache[statsHash] = cacheObject
       output.push(cacheObject.output)
     }
-  })
 }
 
 function wrapInEval (fileContents, fileName, wrapInFunction) {
