@@ -1,3 +1,7 @@
+0.0.19
+-----
+Ensure input tree in an array
+
 0.0.17
 -----
 Call super in constructor
