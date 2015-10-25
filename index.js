@@ -1,4 +1,5 @@
 var fs = require('fs')
+var util = require('util')
 var path = require('path')
 var mkdirp = require('mkdirp')
 var helpers = require('broccoli-kitchen-sink-helpers')
@@ -14,7 +15,6 @@ Concat.prototype = Object.create(Plugin.prototype)
 Concat.prototype.constructor = Concat
 function Concat(inputTree, options) {
   if (!(this instanceof Concat)) return new Concat(inputTree, options)
-  this.inputTree = inputTree
   for (var key in options) {
     if (options.hasOwnProperty(key)) {
       this[key] = options[key]
@@ -23,7 +23,7 @@ function Concat(inputTree, options) {
 
   this.cache = {}
   this.cachedConcatenatedOutputHash = null
-  Plugin.call(this, inputTree, options);
+  Plugin.call(this, util.isArray(inputTree) ? inputTree : [ inputTree ], options);
 }
 
 Concat.prototype.DEFAULT_SEPARATOR = '\n'
