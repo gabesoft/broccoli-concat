@@ -1,3 +1,7 @@
+0.0.17
+-----
+Call super in constructor
+
 0.0.15
 -----
 Use broccoli-plugin as base + dependency update
