@@ -1,3 +1,7 @@
+0.0.15
+-----
+Use broccoli-plugin as base + dependency update
+
 # master
 
 # 0.0.13
