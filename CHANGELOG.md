@@ -1,3 +1,7 @@
+0.0.21
+-----
+Removed the cleanup method
+
 0.0.19
 -----
 Ensure input tree in an array
