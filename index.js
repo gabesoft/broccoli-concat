@@ -41,10 +41,6 @@ Concat.prototype.getWrapInFunction = function() {
 Concat.prototype.getCacheDir = function () {
   return quickTemp.makeOrReuse(this, 'tmpCacheDir')
 }
-Concat.prototype.cleanup = function(){
-  Plugin.prototype.cleanup.call(this)
-  quickTemp.remove(this, 'tmpCacheDir')
-}
 
 Concat.prototype.build = function () {
   var self = this
