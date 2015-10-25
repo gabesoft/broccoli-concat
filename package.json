@@ -1,7 +1,7 @@
 {
   "name": "broccoli-concat",
   "description": "Concatenate broccoli trees",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "author": "Richard Livsey <richard@livsey.org>",
   "main": "index.js",
   "license": "MIT",
@@ -13,12 +13,12 @@
     "test": "mocha tests/"
   },
   "dependencies": {
-    "mkdirp": "^0.5.0",
-    "quick-temp": "~0.1.2",
-    "broccoli-writer": "^0.1.1",
-    "broccoli-kitchen-sink-helpers": "^0.2.4",
-    "js-string-escape": "~1.0.0",
-    "glob": "^4.3.1"
+    "broccoli-kitchen-sink-helpers": "^0.3.1",
+    "broccoli-plugin": "^1.2.0",
+    "glob": "^4.5.3",
+    "js-string-escape": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "quick-temp": "^0.1.3"
   },
   "devDependencies": {
     "mocha": "~1.21.3",

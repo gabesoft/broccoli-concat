@@ -2,7 +2,7 @@ var fs = require('fs')
 var path = require('path')
 var mkdirp = require('mkdirp')
 var helpers = require('broccoli-kitchen-sink-helpers')
-var Writer = require('broccoli-writer')
+var Plugin = require('broccoli-plugin')
 var jsStringEscape = require('js-string-escape')
 var crypto = require('crypto')
 var quickTemp = require('quick-temp')
@@ -10,7 +10,7 @@ var glob = require('glob')
 
 module.exports = Concat
 
-Concat.prototype = Object.create(Writer.prototype)
+Concat.prototype = Object.create(Plugin.prototype)
 Concat.prototype.constructor = Concat
 function Concat(inputTree, options) {
   if (!(this instanceof Concat)) return new Concat(inputTree, options)
@@ -41,12 +41,14 @@ Concat.prototype.getCacheDir = function () {
   return quickTemp.makeOrReuse(this, 'tmpCacheDir')
 }
 Concat.prototype.cleanup = function(){
-  Writer.prototype.cleanup.call(this)
+  Plugin.prototype.cleanup.call(this)
   quickTemp.remove(this, 'tmpCacheDir')
 }
 
-Concat.prototype.write = function (readTree, destDir) {
+Concat.prototype.build = function () {
   var self = this
+  var readTree = this.inputPaths[0];
+  var destDir = this.outputPath;
   return readTree(this.inputTree).then(function (srcDir) {
     var modulesAdded = {}
     var output = []
